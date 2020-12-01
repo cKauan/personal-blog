@@ -1,5 +1,6 @@
 // import Head from 'next/head';
 import Head from '@components/Head';
+
 const Home = () => {
     return (
         <>
