@@ -5,9 +5,9 @@
         [
             "module-resolver",
             {
-                "root": ["./"],
+                "root": ["./src"],
                 "alias": {
-                    "@components": "./src/infra/components"
+                    "@components": "components"
                 }
             }
         ]
