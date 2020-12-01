@@ -7,7 +7,7 @@ const Home = () => {
             <Head title="Homepage" />
             <Presentation />
             <PostsContainer>
-                <a href="">
+                <a href="posts/abc">
                     <img
                         src="https://github.com/ckauan.png"
                         alt="Carlos Kauãn"
