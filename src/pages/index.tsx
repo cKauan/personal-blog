@@ -45,27 +45,6 @@ const Home = ({ posts }: Props) => {
                                     </div>
                                 </a>
                             </Link>
-                            <Link
-                                href={`posts/${post.slug}`}
-                                key={post.id}
-                                passHref
-                            >
-                                <a>
-                                    <img
-                                        src="https://github.com/ckauan.png"
-                                        alt="Carlos Kauãn"
-                                    />
-                                    <div>
-                                        <small>
-                                            {new Date(
-                                                post.created_at
-                                            ).toLocaleDateString()}
-                                        </small>
-                                        <h2>{post.title}</h2>
-                                        <p>{post.description}</p>
-                                    </div>
-                                </a>
-                            </Link>
                         </>
                     ))}
             </PostsContainer>
