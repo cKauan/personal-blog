@@ -28,6 +28,7 @@ export const PostsContainer = styled.div`
         }
         div {
             display: flex;
+            flex: 1;
             color: #222;
             flex-direction: column;
             max-width: 70%;
@@ -35,7 +36,8 @@ export const PostsContainer = styled.div`
             justify-content: center;
             align-items: flex-start;
             h2 {
-                font-size: 28px;
+                font-size: 26px;
+                line-height: 32px;
             }
             small {
                 font-size: 16px;
