@@ -19,7 +19,6 @@ export const PostsContainer = styled.div`
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-        height: 50%;
         padding: 20px 0;
         border-bottom: 1px solid #0000005f;
         img {

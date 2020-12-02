@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: Nunito, sans-serif;
     }
-
+    
     a { 
         text-decoration: none
     } 
@@ -15,7 +15,9 @@ const GlobalStyle = createGlobalStyle`
     li {
         list-style-type: none
     }
-    
+    html {
+        background-color: #2C3032;
+    }
 `;
 
 export default GlobalStyle;
