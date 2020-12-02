@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
+    background-color: ${({ theme: { dark } }) => dark.tertiary};
     flex-direction: row-reverse;
     @media (max-width: 980px) {
         flex-direction: column;
@@ -20,7 +21,7 @@ export const PostsContainer = styled.div`
         width: 100%;
         height: 50%;
         padding: 20px 0;
-        border-bottom: 1px solid #aaa;
+        border-bottom: 1px solid #0000005f;
         img {
             width: 110px;
             height: 110px;
@@ -29,7 +30,7 @@ export const PostsContainer = styled.div`
         div {
             display: flex;
             flex: 1;
-            color: #222;
+            color: #bbb;
             flex-direction: column;
             max-width: 70%;
             padding: 0 20px;

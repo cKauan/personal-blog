@@ -33,19 +33,21 @@ const Post = ({ post }: Props) => {
             <PostContainer>
                 <header>
                     <button onClick={() => back()}>
-                        <FiChevronLeft size={30} />
+                        <FiChevronLeft size={30} color="#ddd"/>
                     </button>
                     <button>
-                        <FiHeart size={30} />
+                        <FiHeart size={30} color="#ddd" />
                     </button>
                 </header>
                 {post && (
                     <div>
-                        <small>
-                            {new Date(post.created_at).toLocaleDateString()}
-                        </small>
-                        <h1>{post.title}</h1>
-                        <h4>{post.description}</h4>
+                        <div>
+                            <small>
+                                {new Date(post.created_at).toLocaleDateString()}
+                            </small>
+                            <h1>{post.title}</h1>
+                            <h4>{post.description}</h4>
+                        </div>
                         <div>{content}</div>
                     </div>
                 )}
@@ -77,6 +79,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
         props: {
             post: data,
         },
-        revalidate: 3600
+        revalidate: 3600,
     };
 };

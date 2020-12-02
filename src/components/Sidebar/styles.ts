@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Presentation = styled.div`
     position: fixed;
-    background-color: #27282b;
+    background-color: ${({ theme: { dark } }) => dark.secondary};
     width: 30vw;
     height: 100vh;
-    color: #fff;
+    color: #ccc;
     padding-top: 60px;
     padding-bottom: 20px;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid #0000005f;
     div {
         display: flex;
         flex-direction: column;
@@ -58,7 +58,7 @@ export const Presentation = styled.div`
             margin: 20px 0;
         }
         a {
-            color: #fff;
+            color: #ccc;
             position: relative;
             font-size: 32px;
             padding: 5px;
