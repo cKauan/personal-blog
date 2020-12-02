@@ -1,13 +1,18 @@
 import { useRouter } from 'next/router';
-import { Container, PostContainer } from '../../styles/Post';
+import {
+    Container,
+    PostContainer,
+    PostItem,
+    PostContent,
+} from '../../styles/Post';
 import Head from '@components/Head';
 import Presentation from '@components/Sidebar';
 import { FiChevronLeft, FiHeart } from 'react-icons/fi';
 import unified from 'unified';
 import parse from 'remark-parse';
 import remark2react from 'remark-react';
-import axios from 'axios';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import api from '../../services/api';
 
 interface Post {
     id: string;
@@ -33,14 +38,14 @@ const Post = ({ post }: Props) => {
             <PostContainer>
                 <header>
                     <button onClick={() => back()}>
-                        <FiChevronLeft size={30} color="#ddd"/>
+                        <FiChevronLeft size={30} color="#ddd" />
                     </button>
                     <button>
                         <FiHeart size={30} color="#ddd" />
                     </button>
                 </header>
                 {post && (
-                    <div>
+                    <PostItem>
                         <div>
                             <small>
                                 {new Date(post.created_at).toLocaleDateString()}
@@ -48,8 +53,8 @@ const Post = ({ post }: Props) => {
                             <h1>{post.title}</h1>
                             <h4>{post.description}</h4>
                         </div>
-                        <div>{content}</div>
-                    </div>
+                        <PostContent>{content}</PostContent>
+                    </PostItem>
                 )}
             </PostContainer>
         </Container>
@@ -58,7 +63,7 @@ const Post = ({ post }: Props) => {
 
 export default Post;
 export const getStaticPaths: GetStaticPaths = async () => {
-    const { data } = await axios.get<Post[]>(`http://localhost:5500/posts`);
+    const { data } = await api.get<Post[]>(`/posts`);
     const paths = data.map((post) => {
         return {
             params: {
@@ -74,7 +79,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     const slug = context.params!.slug!;
-    const { data } = await axios.get(`http://localhost:5500/posts/${slug}`);
+    const { data } = await api.get(`/posts/${slug}`);
     return {
         props: {
             post: data,
