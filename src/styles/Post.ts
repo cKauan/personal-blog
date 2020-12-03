@@ -41,6 +41,10 @@ export const PostContainer = styled.div`
     }
 `;
 
+export const Image = styled.img`
+    margin-bottom: 30px;
+    object-fit: cover;
+`;
 
 export const PostItem = styled.div`
     flex-direction: column;

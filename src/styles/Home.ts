@@ -21,10 +21,12 @@ export const PostsContainer = styled.div`
         width: 100%;
         padding: 20px 0;
         border-bottom: 1px solid #0000005f;
-        img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50vh;
+        span {
+            img {
+                /* max-width: 360px; */
+                height: 120px;
+                object-fit: cover;
+            }
         }
         div {
             display: flex;

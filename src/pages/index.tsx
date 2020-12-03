@@ -10,6 +10,15 @@ interface Post {
     slug: string;
     description: string;
     content: string;
+    thumbnail: {
+        id: string;
+        formats: {
+            [key: string]: {
+                url: string;
+            };
+        };
+        url: string;
+    };
     created_at: string;
 }
 interface Props {
@@ -23,29 +32,31 @@ const Home = ({ posts }: Props) => {
             <PostsContainer>
                 {posts &&
                     posts.map((post) => (
-                        <>
-                            <Link
-                                href={`posts/${post.slug}`}
-                                key={post.id}
-                                passHref
-                            >
-                                <a>
+                        <Link
+                            href={`posts/${post.slug}`}
+                            key={post.id}
+                            passHref
+                        >
+                            <a>
+                                <span>
                                     <img
-                                        src="https://github.com/ckauan.png"
-                                        alt="Carlos Kauãn"
+                                        src={
+                                            post.thumbnail.formats.thumbnail.url
+                                        }
+                                        alt=""
                                     />
-                                    <div>
-                                        <small>
-                                            {new Date(
-                                                post.created_at
-                                            ).toLocaleDateString()}
-                                        </small>
-                                        <h2>{post.title}</h2>
-                                        <p>{post.description}</p>
-                                    </div>
-                                </a>
-                            </Link>
-                        </>
+                                </span>
+                                <div>
+                                    <small>
+                                        {new Date(
+                                            post.created_at
+                                        ).toLocaleDateString()}
+                                    </small>
+                                    <h2>{post.title}</h2>
+                                    <p>{post.description}</p>
+                                </div>
+                            </a>
+                        </Link>
                     ))}
             </PostsContainer>
         </Container>
