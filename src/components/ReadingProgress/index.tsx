@@ -11,7 +11,8 @@ const ReadingProgress = ({ target }: Props) => {
         }
 
         const element = target.current;
-        const totalHeight = element.clientHeight - element.offsetTop;
+        const totalHeight =
+            element.clientHeight + element.offsetTop - window.innerHeight;
         const windowScrollTop =
             window.pageYOffset ||
             document.documentElement.scrollTop ||
