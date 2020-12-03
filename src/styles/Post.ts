@@ -44,6 +44,7 @@ export const PostContainer = styled.div`
 export const Image = styled.img`
     margin-bottom: 30px;
     object-fit: cover;
+    max-width: 100%;
 `;
 
 export const PostItem = styled.div`
