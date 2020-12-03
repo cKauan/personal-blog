@@ -9,13 +9,14 @@ import {
 import Head from '@components/Head';
 import Presentation from '@components/Sidebar';
 import { FiChevronLeft, FiHeart } from 'react-icons/fi';
+import { AiFillHeart } from 'react-icons/ai';
 import unified from 'unified';
 import parse from 'remark-parse';
 import remark2react from 'remark-react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import api from '../../services/api';
 import ReadingProgress from '@components/ReadingProgress';
-import { createRef } from 'react';
+import { createRef, useState } from 'react';
 interface Post {
     id: string;
     title: string;
@@ -39,11 +40,16 @@ interface Props {
 
 const Post = ({ post }: Props) => {
     const { back } = useRouter();
+    const [like, setLike] = useState(false);
     const content = unified()
         .use(parse)
         .use(remark2react)
         .processSync(post.content).result as JSX.IntrinsicElements;
     const target = createRef<HTMLDivElement>();
+
+    function likePost() {
+        setLike(!like);
+    }
     return (
         <Container>
             <Head title="Homepage" />
@@ -55,7 +61,19 @@ const Post = ({ post }: Props) => {
                         <FiChevronLeft size={30} color="#ddd" />
                     </button>
                     <button>
-                        <FiHeart size={30} color="#ddd" />
+                        {like ? (
+                            <AiFillHeart
+                                onClick={likePost}
+                                size={30}
+                                color="#ddd"
+                            />
+                        ) : (
+                            <FiHeart
+                                onClick={likePost}
+                                size={30}
+                                color="#ddd"
+                            />
+                        )}
                     </button>
                 </header>
                 <Image src={post.thumbnail.formats.medium.url} alt="" />
