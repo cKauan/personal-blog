@@ -27,7 +27,7 @@ interface Props {
 const Home = ({ posts }: Props) => {
     return (
         <Container>
-            <Head title="Homepage" />
+            <Head title="Home" />
             <Presentation />
             <PostsContainer>
                 {posts &&

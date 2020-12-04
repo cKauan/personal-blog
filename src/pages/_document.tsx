@@ -42,6 +42,11 @@ export default class MyDocument extends Document {
                         href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
                         rel="stylesheet"
                     />
+                    <link
+                        rel="shortcut icon"
+                        href="https://res.cloudinary.com/ckauan/image/upload/v1607103325/tmp_logo_4e795ad380.png?402757.66000000294"
+                        type="image/x-icon"
+                    />
                 </Head>
                 <body>
                     <Main />

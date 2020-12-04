@@ -81,4 +81,13 @@ export const PostContent = styled.div`
     code {
         padding: 3px;
     }
+    img {
+        max-width: 100%;
+        max-height: 400px;
+    }
+    a {
+        cursor: pointer;
+        color: #3daace;
+        border-bottom: 1px dashed #3daace;
+    }
 `;

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Presentation } from './styles';
 import { FiTwitter, FiAlignJustify } from 'react-icons/fi';
+import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
-
 const Sidebar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const isMobile = useMediaQuery(
@@ -23,17 +23,26 @@ const Sidebar = () => {
                 <h3>Carlos Kauãn</h3>
                 <p>Back-end student 💻 NodeJS and Typescript | Self-taught</p>
                 <div>
-                    <a href="">
-                        <FiTwitter size={28} color="#fff" />
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://linkedin.com/in/ckauan"
+                    >
+                        <FaLinkedin size={28} color="#fff" />
                     </a>
-                    <a href="">
-                        <FiTwitter size={28} color="#fff" />
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://github.com/ckauan"
+                    >
+                        <FaGithubSquare size={28} color="#fff" />
                     </a>
-                    <a href="">
-                        <FiTwitter size={28} color="#fff" />
-                    </a>
-                    <a href="">
-                        <FiTwitter size={28} color="#fff" />
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://twitter.com/carlaodamassaa"
+                    >
+                        <FaTwitterSquare size={28} color="#fff" />
                     </a>
                 </div>
             </div>
