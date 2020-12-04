@@ -52,7 +52,7 @@ const Post = ({ post }: Props) => {
     }
     return (
         <Container>
-            <Head title="Homepage" />
+            <Head title={post.title} />
             <Presentation />
             <PostContainer>
                 <ReadingProgress target={target} />
